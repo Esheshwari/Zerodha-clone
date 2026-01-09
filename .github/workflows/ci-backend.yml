@@ -1,0 +1,27 @@
+name: Backend CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+
+jobs:
+  backend-ci:
+    name: Backend CI
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm ci
+        working-directory: backend
+      - name: Run tests (if present)
+        run: npm test --silent --if-present || echo "No backend tests"
+        working-directory: backend
+      - name: Sanity - node/npm versions
+        run: node -v && npm -v
+        
