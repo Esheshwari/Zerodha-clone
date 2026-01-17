@@ -182,6 +182,9 @@ https://github.com/user-attachments/assets/2cfe9461-cb18-4012-8573-dc7d630b0ad9
 
 ---
 
+## LICENSE 
+**MIT LICENSE**
+
 ## Author
 
 **Esheshwari Kumari -**
